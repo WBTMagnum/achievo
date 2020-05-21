@@ -30,7 +30,7 @@ atksession();
 atksecure();
 include "theme.inc";
 
-$output = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">';
+$output='<!doctype html><html lang="de">';
 $output.="\n<html>\n <head>\n";
 $output.='  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=' . atktext("charset", "", "atk") . '">';
 $output.="\n  <title>" . getAchievoTitle() . "</title>\n";
