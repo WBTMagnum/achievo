@@ -550,13 +550,20 @@ class hours extends atkNode
         $this->updatesessionrecordviewdate();
 
         if ($this->m_weekview != 1) {
-            if ($this->m_lock == "" && !$this->hasFlag(NF_NO_ADD))
+            // show addPage / addPanel only if
+            // 1. the week is not locked and
+            // 2. the 'NF_NO_ADD' flag is not set.
+            if ($this->m_lock == "" && $this->hasFlag(NF_NO_ADD) === False)
                 $res[] = $handler->invoke("addPage", $handler->getRejectInfo());
             $this->addFilter("activitydate", $this->m_viewdate);
             $res[] = $handler->invoke("adminPage");
         }
         else {
-            if (atkconfig::get("timereg", "timereg_week_bookable") == true && $this->m_lock == "" && !$this->hasFlag(NF_NO_ADD))
+            // show addPage / addPanel only if
+            // 1. weeks are bookable,
+            // 2. the week is not locked and
+            // 3. the 'NF_NO_ADD' flag is not set.
+            if (atkconfig::get("timereg", "timereg_week_bookable") == true && $this->m_lock == "" && $this->hasFlag(NF_NO_ADD) === False)
                 $res[] = $handler->invoke("addPage", $handler->getRejectInfo());
             $res[] = $this->weekview();
         }
