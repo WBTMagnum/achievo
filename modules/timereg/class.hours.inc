@@ -198,7 +198,7 @@ class hours extends atkNode
 
         $flags|=NF_NO_VIEW | NF_TRACK_CHANGES | NF_NO_IMPORT;
 
-        $this->atkNode($type, $flags | NF_MRA | NF_NO_ADD); // node() constructor is *not* called automatically!
+        $this->atkNode($type, $flags | NF_MRA); // node() constructor is *not* called automatically!
         // Default view if none is set
         if (!isset($this->m_weekview) || $this->m_weekview == "") {
             if (atkconfig::get("timereg", "timereg_defaultview") == "week")
