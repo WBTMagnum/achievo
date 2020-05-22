@@ -76,8 +76,9 @@ working webserver with PHP support and a MySQL database installed.
    and upgrades. You can revoke these privileges once the installation is
    complete.
 
-4) Edit the file config.inc.php in the achievo directory, and set the
-   $config_db variable to match your setup.
+4) Copy the sample configuration `config-sample.inc.php` to `config.inc.php`,
+   edit the config file to your needs, and set the $config_db variable to
+   match your setup.
 
    example:
 
